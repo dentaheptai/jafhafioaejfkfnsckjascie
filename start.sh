@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python3 -m bot.py
+python bot.py
