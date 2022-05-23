@@ -1,33 +1,21 @@
 {
-  "name": "Autoposter",
-  "description": "This app does one little thing, and does it well.",
-  "keywords": [
-    "python",
-    "telegram"
-  ],
-  
-  "env": {
-    "PHONE": {
-      "description": "phone",
-      "required": "true"
-    },
-    "API_HASH": {
-      "description": "api hash",
-      "required": "true"
-    },
-    "API_ID": {
-      "description": "api id",
-      "required": "true"
-    },
-    "PASSWORD": {
-      "description": "password",
-      "required": "true"
-    },
-  },
-  
-  "buildpacks": [
-    {
-      "url": "heroku/python"
+    "env": {
+        "API_HASH": {
+            "description": "Get this value from my.telegram.org.",
+            "required": true
+        },
+        "API_ID": {
+            "description": "Get this value from my.telegram.org.",
+            "required": true
+        },
+      "PHONE": {
+            "description": "Phone number with country code.",
+            "required": true
+        },
+        "PASSWORD": {
+            "description": "Two step verification password.",
+            "required": true
+        }
     }
-  ]
+    
 }
