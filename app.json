@@ -1,0 +1,33 @@
+{
+  "name": "Autoposter",
+  "description": "This app does one little thing, and does it well.",
+  "keywords": [
+    "python",
+    "telegram"
+  ],
+  
+  "env": {
+    "PHONE": {
+      "description": "phone",
+      "required": "true"
+    },
+    "API_HASH": {
+      "description": "api hash",
+      "required": "true"
+    },
+    "API_ID": {
+      "description": "api id",
+      "required": "true"
+    },
+    "PASSWORD": {
+      "description": "password",
+      "required": "true"
+    },
+  },
+  
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
