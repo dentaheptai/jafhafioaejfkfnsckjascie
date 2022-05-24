@@ -1,6 +1,4 @@
-import time
 import json
-import asyncio
 import os 
 
 from pyrogram import Client
@@ -10,10 +8,10 @@ api_id = int(os.environ.get('API_ID', 0))
 api_hash = str(os.environ.get('API_HASH', ''))
 passcode = str(os.environ.get('PASSWORD', ''))
 
-async def poster():
+def poster():
 
 
-  async with Client('new',api_id=api_id, api_hash=api_hash, phone_number=phone , password=passcode) as app:
+  with Client('new',api_id=api_id, api_hash=api_hash, phone_number=phone , password=passcode) as app:
     
 
     with open("newData.json",'r') as f:
@@ -24,15 +22,11 @@ async def poster():
 
         print(d["title"],d["loadLink"])
     
-        result = await app.send_photo('HoneyBearPromotions', d["loadLink"], caption=f'<a href="https://roughamerican.blogspot.com">{d["title"]}</a>', parse_mode="HTML")
+        result = app.send_photo('HoneyBearPromotions', d["loadLink"], caption=f'<a href="https://roughamerican.blogspot.com">{d["title"]}</a>', parse_mode="HTML")
 
         break
 
-def main():
-  loop = asyncio.get_event_loop()
-  loop.run_until_complete(poster())
-  loop.close()
 
 
 if __name__ == '__main__':
-  main()
+  poster()
