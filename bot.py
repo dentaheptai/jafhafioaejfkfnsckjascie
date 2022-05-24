@@ -1,6 +1,6 @@
 import json
 import os 
-
+import traceback
 from pyrogram import Client
 
 phone = str(os.environ.get('PHONE', ''))
@@ -9,23 +9,27 @@ api_hash = str(os.environ.get('API_HASH', ''))
 passcode = str(os.environ.get('PASSWORD', ''))
 
 def poster():
+  
+  
+  try:
+
+    with Client('new',api_id=api_id, api_hash=api_hash, phone_number=phone , password=passcode) as app:
 
 
-  with Client('new',api_id=api_id, api_hash=api_hash, phone_number=phone , password=passcode) as app:
-    
+      with open("newData.json",'r') as f:
 
-    with open("newData.json",'r') as f:
+        data = json.load(f)
 
-      data = json.load(f)
+        for d in data:
 
-      for d in data:
+          print(d["title"],d["loadLink"])
 
-        print(d["title"],d["loadLink"])
-    
-        result = app.send_photo('HoneyBearPromotions', d["loadLink"], caption=f'<a href="https://roughamerican.blogspot.com">{d["title"]}</a>', parse_mode="HTML")
+          result = app.send_photo('HoneyBearPromotions', d["loadLink"], caption=f'<a href="https://roughamerican.blogspot.com">{d["title"]}</a>', parse_mode="HTML")
 
-        break
+          break
 
+  except:
+    print(traceback.format_exc())
 
 
 if __name__ == '__main__':
