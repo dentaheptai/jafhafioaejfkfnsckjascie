@@ -24,7 +24,7 @@ def poster():
 
           print(d["title"],d["loadLink"])
 
-          result = app.send_photo('HoneyBearPromotions', d["loadLink"], caption=f'<a href="https://roughamerican.blogspot.com">{d["title"]}</a>', parse_mode="HTML")
+          result = app.send_photo('HoneyBearPromotions', d["loadLink"], caption=f'<a href="https://roughamerican.blogspot.com">{d["title"]}</a>')
 
           break
 
