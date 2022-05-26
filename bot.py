@@ -1,6 +1,7 @@
 import json
 import os 
 import traceback
+import sys
 from pyrogram import Client
 
 session = str(os.environ.get('STRING_SESSION', ''))
@@ -34,3 +35,4 @@ def poster():
 
 if __name__ == '__main__':
   poster()
+  sys.exit()
