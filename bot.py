@@ -13,7 +13,7 @@ def poster():
   
   try:
 
-    with Client(api_id=api_id, api_hash=api_hash, session_string=session) as app:
+    with Client('autoposter',api_id=api_id, api_hash=api_hash, session_string=session) as app:
 
 
       with open("newData.json",'r') as f:
