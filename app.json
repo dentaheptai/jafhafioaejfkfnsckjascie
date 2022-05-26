@@ -8,14 +8,10 @@
             "description": "Get this value from my.telegram.org.",
             "required": true
         },
-      "PHONE": {
-            "description": "Phone number with country code.",
+      "STRING_SESSION": {
+            "description": "String session",
             "required": true
-        },
-        "PASSWORD": {
-            "description": "Two step verification password.",
-            "required": true
-        }
+      }
     }
     
 }
