@@ -3,17 +3,17 @@ import os
 import traceback
 from pyrogram import Client
 
-phone = str(os.environ.get('PHONE', ''))
+session = str(os.environ.get('STRING_SESSION', ''))
 api_id = int(os.environ.get('API_ID', 0))
 api_hash = str(os.environ.get('API_HASH', ''))
-passcode = str(os.environ.get('PASSWORD', ''))
+
 
 def poster():
   
   
   try:
 
-    with Client('new',api_id=api_id, api_hash=api_hash, phone_number=phone , password=passcode) as app:
+    with Client(api_id=api_id, api_hash=api_hash, session_string=session) as app:
 
 
       with open("newData.json",'r') as f:
